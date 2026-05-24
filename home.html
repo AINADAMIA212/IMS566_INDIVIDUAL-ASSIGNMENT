@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flora Luxe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="home.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+        <img src="logo.png">
+
+        <div>
+            <h2>Flora Luxe</h2>
+            <p>Luxury Floral Boutique</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="home.html"><i class="bi bi-house-heart"></i>Home</a>
+        <a href="bouquet.html"><i class="bi bi-flower1"></i>Bouquet</a>
+        <a href="services.html"><i class="bi bi-balloon-heart"></i>Services Decoration</a>
+        <a href="contact.html"><i class="bi bi-envelope-heart"></i>Contact Us</a>
+        <a href="index.html"><i class="bi bi-box-arrow-right"></i>Logout</a>
+    </nav>
+
+    <div class="nav-icons">
+
+        <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search flowers...">
+        </div>
+
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="bi bi-bag-heart-fill"></i>
+            <span id="cartCount">0</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>
+            Bloom Your <br>
+            Beautiful Moments
+        </h1>
+
+        <p>
+            Elegant bouquets and luxury decorations crafted specially for your unforgettable memories.
+        </p>
+
+        <div class="hero-dropdown">
+
+    <button class="hero-btn">
+
+        Shop Collection ▾
+
+    </button>
+
+    <div class="hero-dropdown-content">
+
+        <a href="#bestSeller"><i class="bi bi-trophy"></i>Best Seller</a>
+
+        <a href="#chart"><i class="bi bi-bar-chart-line"></i>Popular Bouquet</a>
+
+        <a href="#services"><i class="bi bi-balloon-heart"></i>Decoration Packages</a>
+
+        <a href="#reviews"><i class="bi bi-chat-heart"></i>Customer Feedback</a>
+
+    </div>
+
+</div>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="flower17.jpg">
+    </div>
+
+</section>
+
+
+<!-- BEST SELLER -->
+<section class="best-seller" id="bestSeller">
+
+    <div class="title-area">
+        <p class="small-title">OUR COLLECTION</p>
+        <h2>Best Seller Bouquets</h2>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="flower1.jpg">
+            <h3>Sweet Pink Roses</h3>
+            <p>RM 90</p>
+            <button onclick="addToCart('Sweet Pink Roses',90)">
+                Add To Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="flower2.jpg">
+            <h3>White Lily Elegance</h3>
+            <p>RM 85</p>
+            <button onclick="addToCart('White Lily Elegance',85)">
+                Add To Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="flower3.jpg">
+            <h3>Sunflower Bliss</h3>
+            <p>RM 70</p>
+            <button onclick="addToCart('Sunflower Bliss',70)">
+                Add To Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="flower4.jpg">
+            <h3>Romantic Red Roses</h3>
+            <p>RM 150</p>
+            <button onclick="addToCart('Romantic Red Roses',150)">
+                Add To Cart
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CHART -->
+<section class="chart-section" id="chart">
+
+    <div class="title-area">
+
+        <p class="small-title">
+            FLOWER SALES
+        </p>
+
+        <h2>
+            Popular Bouquet Orders
+        </h2>
+
+    </div>
+
+    <div class="chart-box">
+
+        <canvas id="salesChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+    <div class="title-area">
+        <p class="small-title">FLORAL SERVICES</p>
+        <h2>Decoration Packages</h2>
+    </div>
+
+    <div class="product-grid">
+
+        <!-- CARD 1 -->
+        <div class="product-card">
+
+            <img src="Birthday2.png">
+
+            <h3>Birthday Decoration</h3>
+
+            <p>RM 300</p>
+
+            <button onclick="addToCart('Birthday Decoration',300)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="product-card">
+
+            <img src="pelamin2.jpg">
+
+            <h3>Wedding Stage</h3>
+
+            <p>RM 900</p>
+
+            <button onclick="addToCart('Wedding Stage',900)">
+                Add To Cart
+            </button>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="product-card">
+
+            <img src="gender3.jpg">
+
+            <h3>Gender Reveal Setup</h3>
+
+            <p>RM 270</p>
+
+            <button onclick="addToCart('Gender Reveal Setup',270)">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEW -->
+<section class="reviews" id="reviews">
+
+    <div class="title-area">
+        <p class="small-title">CUSTOMER FEEDBACK</p>
+        <h2>What They Say</h2>
+    </div>
+
+    <div class="review-grid">
+
+        <!-- REVIEW 1 -->
+        <div class="review-card">
+
+            <img src="review1.jpeg" class="review-img">
+
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+
+            <h4>— Aina</h4>
+
+        </div>
+
+        <!-- REVIEW 2 -->
+        <div class="review-card">
+
+            <img src="review2.jpeg" class="review-img">
+
+            <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+
+            <h4>— Sarah</h4>
+
+        </div>
+
+        <!-- REVIEW 3 -->
+        <div class="review-card">
+
+            <img src="review3.jpeg" class="review-img">
+            <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+
+            <h4>— Melissa</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <i class="bi bi-x-lg" onclick="toggleCart()"></i>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+
+        <h3>
+            Total: RM <span id="cartTotal">0</span>
+        </h3>
+
+        <button onclick="checkout()">
+            Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+    © 2026 Flora Luxe • Luxury Floral Boutique
+</footer>
+
+<script>
+
+// CHART
+
+const ctx =
+document.getElementById('salesChart');
+
+new Chart(ctx, {
+
+    type: 'bar',
+
+    data: {
+
+        labels: [
+            'Sweet Pink Roses',
+            'Sunflower Bliss',
+            'White Lily Elegance',
+            'Romantic Red Roses',
+            'Pink Lily With Bear'
+        ],
+
+        datasets: [{
+
+            label: 'Orders',
+
+            data: [12, 19, 8, 15, 10],
+
+            backgroundColor: [
+
+                '#ff4f81',
+                '#ff7aa2',
+                '#ffc1d6',
+                '#ff99b8',
+                '#ffd6e4'
+            ],
+
+            borderRadius:15,
+
+            borderWidth:0
+        }]
+    },
+
+    options: {
+
+        responsive:true,
+
+        plugins: {
+
+            legend: {
+
+                labels: {
+
+                    color:'#5a2a2a',
+
+                    font:{
+                        size:14
+                    }
+                }
+            }
+        },
+
+        scales: {
+
+            x: {
+
+                ticks: {
+
+                    color:'#5a2a2a'
+                },
+
+                grid: {
+
+                    display:false
+                }
+            },
+
+            y: {
+
+                beginAtZero:true,
+
+                ticks: {
+
+                    color:'#5a2a2a'
+                },
+
+                grid: {
+
+                    color:'rgba(255,79,129,0.1)'
+                }
+            }
+        }
+    }
+});
+
+// LOAD CART
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+
+// ADD TO CART
+function addToCart(name, price){
+
+    cart.push({
+
+        name:name,
+        price:price
+    });
+
+    // SAVE
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    updateCart();
+
+    alert(name + " added to cart 🌸");
+}
+
+function updateCart(){
+
+    let cartItems =
+    document.getElementById("cartItems");
+
+    let cartCount =
+    document.getElementById("cartCount");
+
+    let cartTotal =
+    document.getElementById("cartTotal");
+
+    // CHECK ELEMENT
+    if(!cartItems || !cartCount || !cartTotal){
+
+        return;
+    }
+
+    // RESET
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach((item,index)=>{
+
+        total += item.price;
+
+        cartItems.innerHTML += `
+
+        <div class="cart-item">
+
+            <div>
+
+                <h4>${item.name}</h4>
+
+                <p>RM ${item.price}</p>
+
+            </div>
+
+            <button onclick="removeItem(${index})">
+
+                X
+
+            </button>
+
+        </div>
+        `;
+    });
+
+    // UPDATE COUNT
+    cartCount.innerText = cart.length;
+
+    // UPDATE TOTAL
+    cartTotal.innerText = total;
+}
+
+// REMOVE ITEM
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    // UPDATE STORAGE
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    updateCart();
+}
+
+
+// TOGGLE CART
+function toggleCart(){
+
+    document
+    .getElementById("cartSidebar")
+    .classList.toggle("show-cart");
+}
+
+
+// CHECKOUT
+function checkout(){
+
+    if(cart.length === 0){
+
+        alert("Your cart is empty!");
+    }
+
+    else{
+
+        alert("Checkout successful 🌸");
+
+        // CLEAR CART
+        cart = [];
+
+        // REMOVE STORAGE
+        localStorage.removeItem("cart");
+
+        updateCart();
+
+        toggleCart();
+    }
+}
+
+
+// LOAD CART WHEN PAGE OPEN
+updateCart();
+
+</script>
+
+</body>
+</html>
+

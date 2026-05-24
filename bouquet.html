@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flora Luxe Bouquet</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="bouquet.css">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+
+        <img src="logo.png">
+
+        <div>
+            <h2>Flora Luxe</h2>
+            <p>Luxury Floral Boutique</p>
+        </div>
+
+    </div>
+
+    <nav>
+       <a href="home.html"><i class="bi bi-house-heart"></i>Home</a>
+        <a href="bouquet.html"><i class="bi bi-flower1"></i>Bouquet</a>
+        <a href="services.html"><i class="bi bi-balloon-heart"></i>Services Decoration</a>
+        <a href="contact.html"><i class="bi bi-envelope-heart"></i>Contact Us</a>
+        <a href="index.html"><i class="bi bi-box-arrow-right"></i>Logout</a>
+    </nav>
+
+    <div class="nav-icons">
+
+        <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search flowers...">
+        </div>
+
+        <div class="cart-icon" onclick="toggleCart()">
+
+            <i class="bi bi-bag-heart-fill"></i>
+
+            <span id="cartCount">0</span>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- HEADER -->
+<section class="hero">
+
+    <p class="small-title">FLOWER COLLECTION</p>
+
+    <h1>Luxury Bouquet Collection</h1>
+
+    <p class="hero-desc">
+        Elegant birthday and graduation bouquets specially designed
+        for your unforgettable moments.
+    </p>
+
+</section>
+
+
+<!-- BIRTHDAY BOUQUET -->
+<section class="bouquet-section">
+
+    <div class="title-area">
+        <h2>Birthday Bouquet</h2>
+    </div>
+
+    <div class="bouquet-grid">
+
+        <!-- 1 -->
+        <div class="bouquet-card">
+            <img src="flower1.jpg">
+            <h3>Sweet Pink Roses</h3>
+            <p>RM 90</p>
+            <button onclick="addToCart('Sweet Pink Roses',90)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 2 -->
+        <div class="bouquet-card">
+            <img src="flower2.jpg">
+            <h3>White Lily Elegance</h3>
+            <p>RM 85</p>
+            <button onclick="addToCart('White Lily Elegance',85)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 3 -->
+        <div class="bouquet-card">
+            <img src="flower3.jpg">
+            <h3>Sunflower Bliss</h3>
+            <p>RM 70</p>
+            <button onclick="addToCart('Sunflower Bliss',70)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 4 -->
+        <div class="bouquet-card">
+            <img src="flower4.jpg">
+            <h3>Romantic Red Roses</h3>
+            <p>RM 150</p>
+            <button onclick="addToCart('Romantic Red Roses',150)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 5 -->
+        <div class="bouquet-card">
+            <img src="flower5.jpg">
+            <h3>Baby Breath Dream</h3>
+            <p>RM 55</p>
+            <button onclick="addToCart('Baby Breath Dream',55)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 6 -->
+        <div class="bouquet-card">
+            <img src="flower6.jpg">
+            <h3>Classic White Rose</h3>
+            <p>RM 50</p>
+            <button onclick="addToCart('Classic White Rose',50)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 7 -->
+        <div class="bouquet-card">
+            <img src="flower7.jpg">
+            <h3>Soft Blue Bloom</h3>
+            <p>RM 80</p>
+            <button onclick="addToCart('Soft Blue Bloom',80)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 8 -->
+        <div class="bouquet-card">
+            <img src="flower8.jpg">
+            <h3>Luxury Pink Mix</h3>
+            <p>RM 78</p>
+            <button onclick="addToCart('Luxury Pink Mix',78)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 9 -->
+        <div class="bouquet-card">
+            <img src="flower9.jpg">
+            <h3>Velvet Red Bloom</h3>
+            <p>RM 100</p>
+            <button onclick="addToCart('Velvet Red Bloom',100)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 10 -->
+        <div class="bouquet-card">
+            <img src="F10.jpg">
+            <h3>Ivory Rose Elegance</h3>
+            <p>RM 200</p>
+            <button onclick="addToCart('Ivory Rose Elegance',200)">
+    Add To Cart
+</button>
+        </div>
+
+        <!--11 -->
+        <div class="bouquet-card">
+            <img src="flower14.jpg">
+            <h3>Butterfly Pastel</h3>
+            <p>RM 78</p>
+            <button onclick="addToCart('Butterfly Pastel',78)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 12 -->
+        <div class="bouquet-card">
+            <img src="F12.jpg">
+            <h3>Pastel Birthday Bouquet</h3>
+            <p>RM 110</p>
+            <button onclick="addToCart('Pastel Birthday Bouquet',110)">
+    Add To Cart
+</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GRADUATION -->
+<section class="bouquet-section">
+
+    <div class="title-area">
+        <h2>Graduation Bouquet</h2>
+    </div>
+
+    <div class="bouquet-grid">
+
+        <!-- 1 -->
+        <div class="bouquet-card">
+            <img src="flower10.jpg">
+            <h3>Graduation Box</h3>
+            <p>RM 45</p>
+            <button onclick="addToCart('Graduation Box',45)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 2 -->
+        <div class="bouquet-card">
+            <img src="flower11.jpg">
+            <h3>Graduation With Bear</h3>
+            <p>RM 65</p>
+            <button onclick="addToCart('Graduation With Bear',65)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 3 -->
+        <div class="bouquet-card">
+            <img src="flower12.jpg">
+            <h3>Balloon Graduation</h3>
+            <p>RM 76</p>
+            <button onclick="addToCart('Balloon Graduation',76)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 4 -->
+        <div class="bouquet-card">
+            <img src="flower13.jpg">
+            <h3>Graduation Rose Box</h3>
+            <p>RM 45</p>
+            <button onclick="addToCart('Graduation Rose Box',45)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 5 -->
+        <div class="bouquet-card">
+            <img src="flower15.jpg">
+            <h3>Golden Graduation</h3>
+            <p>RM 75</p>
+            <button onclick="addToCart('Golden Graduation',75)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 6 -->
+        <div class="bouquet-card">
+            <img src="flower18.jpg">
+            <h3>Sunset Bouquet</h3>
+            <p>RM 67</p>
+            <button onclick="addToCart('Sunset Bouquet',67)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 7 -->
+        <div class="bouquet-card">
+            <img src="F7.jpg">
+            <h3>Pink Lily With Bear</h3>
+            <p>RM 60</p>
+            <button onclick="addToCart('Pink Lily With Bear',60)">
+    Add To Cart
+</button>
+        </div>
+
+        <!-- 8 -->
+        <div class="bouquet-card">
+            <img src="F8.jpg">
+            <h3>Sweet Congrats Bloom</h3>
+            <p>RM 80</p>
+            <button onclick="addToCart('Sweet Congrats Bloom',80)">
+    Add To Cart
+</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <i class="bi bi-x-lg" onclick="toggleCart()"></i>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+
+        <h3>
+            Total: RM <span id="cartTotal">0</span>
+        </h3>
+
+        <button onclick="checkout()">
+            Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Flora Luxe • Luxury Floral Boutique
+</footer>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// ADD TO CART
+function addToCart(name, price){
+
+    cart.push({name, price});
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCart();
+
+    alert(name + " added to cart!");
+}
+
+
+// UPDATE CART
+function updateCart(){
+
+    document.getElementById("cartCount").innerText =
+    cart.length;
+
+    let cartItems =
+    document.getElementById("cartItems");
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+    cart.forEach((item,index)=>{
+
+        total += item.price;
+
+        cartItems.innerHTML += `
+
+        <div class="cart-item">
+
+            <div>
+                <h4>${item.name}</h4>
+                <p>RM ${item.price}</p>
+            </div>
+
+            <button onclick="removeItem(${index})">
+                Remove
+            </button>
+
+        </div>
+        `;
+    });
+
+    document.getElementById("cartTotal").innerText =
+    total;
+}
+
+
+// REMOVE ITEM
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCart();
+}
+
+
+// TOGGLE CART
+function toggleCart(){
+
+    document.getElementById("cartSidebar")
+    .classList.toggle("show-cart");
+}
+
+
+// CHECKOUT
+function checkout(){
+
+    if(cart.length === 0){
+
+        alert("Your cart is empty!");
+    }
+
+    else{
+
+        alert("Checkout Successful!");
+
+        cart = [];
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        updateCart();
+
+        toggleCart();
+    }
+}
+
+
+// LOAD
+updateCart();
+
+</script>
+
+</body>
+</html>

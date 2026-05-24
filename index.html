@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flora Luxe</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card-box">
+
+    <!-- LOGO -->
+    <div class="logo-img">
+        <img src="logo.png" alt="Flora Luxe Logo">
+    </div>
+
+    <!-- BRAND -->
+    <h2>
+        <span class="flora">Flora</span>
+        <span class="luxe">Luxe</span>
+    </h2>
+
+    <p class="tagline">Where Every Moment Blooms</p>
+
+    <!-- LOGIN -->
+    <div id="loginBox">
+
+        <h3>Welcome Back</h3>
+        <p class="sub">Please login to continue ❤</p>
+
+        <div class="input-group">
+            <i class="bi bi-envelope"></i>
+            <input type="email" id="loginEmail" placeholder="Email">
+        </div>
+
+        <div class="input-group">
+            <i class="bi bi-lock"></i>
+            <input type="password" id="loginPass" placeholder="Password">
+        </div>
+
+        <button class="btn-main" onclick="login()">
+            LOGIN →
+        </button>
+
+        <p id="loginError" class="error"></p>
+
+        <p class="switch">
+            Don’t have an account?
+            <span onclick="showRegister()">Sign Up</span>
+        </p>
+
+    </div>
+
+    <!-- REGISTER -->
+    <div id="registerBox">
+
+        <h3>Create Account</h3>
+        <p class="sub">Join Flora Luxe ❤</p>
+
+        <div class="input-group">
+            <i class="bi bi-envelope"></i>
+            <input type="email" id="regEmail" placeholder="Email">
+        </div>
+
+        <div class="input-group">
+            <i class="bi bi-lock"></i>
+            <input type="password" id="regPass" placeholder="Password">
+        </div>
+
+        <button class="btn-main" onclick="register()">
+            REGISTER
+        </button>
+
+        <p id="regError" class="error"></p>
+
+        <p class="switch">
+            Already have an account?
+            <span onclick="showLogin()">Login</span>
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+// LOGIN FUNCTION
+function login(){
+
+    let email = document.getElementById("loginEmail").value;
+    let pass = document.getElementById("loginPass").value;
+
+    // GET SAVED ACCOUNT
+    let savedEmail = localStorage.getItem("userEmail");
+    let savedPass = localStorage.getItem("userPass");
+
+    // VALIDATION
+    if(email === "" || pass === ""){
+
+        document.getElementById("loginError").innerText =
+        "Please fill all fields!";
+    }
+
+    // LOGIN SUCCESS
+    else if(email === savedEmail && pass === savedPass){
+
+        localStorage.setItem("role","customer");
+
+        alert("Login Successful!");
+
+        window.location.href = "home.html";
+    }
+
+    // LOGIN FAILED
+    else{
+
+        document.getElementById("loginError").innerText =
+        "Invalid email or password!";
+    }
+}
+
+// REGISTER FUNCTION
+function register(){
+
+    let email = document.getElementById("regEmail").value;
+    let pass = document.getElementById("regPass").value;
+
+    // VALIDATION
+    if(email === "" || pass === ""){
+
+        document.getElementById("regError").innerText =
+        "Please fill all fields!";
+    }
+
+    // REGISTER SUCCESS
+    else{
+
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userPass", pass);
+
+        alert("Account created successfully!");
+
+        showLogin();
+    }
+}
+
+// SHOW REGISTER
+function showRegister(){
+
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("registerBox").style.display = "block";
+
+    document.getElementById("loginError").innerText = "";
+}
+
+// SHOW LOGIN
+function showLogin(){
+
+    document.getElementById("loginBox").style.display = "block";
+    document.getElementById("registerBox").style.display = "none";
+
+    document.getElementById("regError").innerText = "";
+}
+
+// HIDE REGISTER FIRST
+document.getElementById("registerBox").style.display = "none";
+
+</script>
+
+</body>
+</html>
